@@ -60,7 +60,7 @@ namespace HornetsecurityCodeChallenge.Controllers
 
             User user = db.Users.Where(x => x.Email == loginDetails.Email).FirstOrDefault();
 
-            if(loginDetails.Password == null)
+            if(user == null)
             {
                 return BadRequest("Please enter Email and Password");
             }
